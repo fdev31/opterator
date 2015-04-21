@@ -94,7 +94,7 @@ So, if your main function looks like this:
   if __name__ == '__main__':
       main()
 
-Your help text will look like this::
+Your help text will look like this:
 
 .. code-block:: none
 
