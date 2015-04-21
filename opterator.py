@@ -25,6 +25,12 @@ import sys
 
 __version__ = "0.5"
 
+try:
+    next
+except NameError:
+    def next(thing):
+        return thing.next()
+
 
 def generate_options():
     '''Helper coroutine to identify short options that haven't been used
