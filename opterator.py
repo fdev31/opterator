@@ -22,6 +22,7 @@
 from argparse import ArgumentParser
 import inspect
 import sys
+import re
 
 __version__ = "0.5"
 
@@ -126,7 +127,7 @@ def opterate(func):
     description = ''
     param_docs = {}
     if func.__doc__:
-        param_doc = func.__doc__.split(':param')
+        param_doc = re.split(':(?:arg|param)', func.__doc__)
         description = param_doc.pop(0).strip()
         for param in param_doc:
             param_args = param.split()
